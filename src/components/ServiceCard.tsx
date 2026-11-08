@@ -38,14 +38,16 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   // Service category SVG icons
   const renderIcon = () => {
     switch (service.id) {
+      case 'interior-detailing':
+      case 'full-interior-detail':
+        return <Car className="w-6 h-6 text-white" />;
+      case 'exterior-detailing':
+      case 'exterior-wash-hand-dry':
+        return <Droplets className="w-6 h-6 text-white" />;
       case 'ceramic-coating':
         return <ShieldCheck className="w-6 h-6 text-white" />;
       case 'paint-correction':
         return <Sparkles className="w-6 h-6 text-white" />;
-      case 'full-interior-detail':
-        return <Car className="w-6 h-6 text-white" />;
-      case 'exterior-wash-hand-dry':
-        return <Droplets className="w-6 h-6 text-white" />;
       case 'express-detail-package':
         return <Zap className="w-6 h-6 text-white" />;
       case 'premium-detail-package':

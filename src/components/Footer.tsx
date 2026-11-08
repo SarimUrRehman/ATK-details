@@ -2,10 +2,10 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  * 
- * ATK DETAILING FOOTER & FLOATING ACTIONS
+ * DODDS MOBILE DETAILING FOOTER & FLOATING ACTIONS
  * - Recreates the white logo on dark black background
  * - Navigation mirror to the 5 content sections
- * - Verified phone (021 139 0221), email, address, and social links
+ * - Verified phone (+64 22 538 5350), email, address, and social links
  * - Floating Mobile Call Action + Back-To-Top trigger
  */
 
@@ -43,11 +43,11 @@ export const Footer: React.FC<FooterProps> = ({
             
             {/* Col 1: Brand Logo & Mission */}
             <div className="space-y-4">
-              <div className="w-56">
+              <div className="w-64 sm:w-72">
                 <AtkLogo theme="dark" variant="full" accentColor={accentColor} />
               </div>
               <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
-                Specialist vehicle ceramic coatings, multi-stage paint correction, and precision detailing packages across New Zealand. Dedicated to flawless, durable gloss.
+                Professional interior and exterior mobile car detailing across New Zealand. Trained by Mexted Motors and delivered directly to your home or workplace.
               </p>
               <div className="flex items-center gap-2 text-xs text-neutral-300 font-mono">
                 <div className="flex text-amber-400">
@@ -55,14 +55,14 @@ export const Footer: React.FC<FooterProps> = ({
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                   ))}
                 </div>
-                <span>5.0 ★ (36 Google Reviews)</span>
+                <span>5.0 ★ (8 Google Reviews)</span>
               </div>
             </div>
 
             {/* Col 2: Quick Links to 5 Sections */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-white font-mono mb-4">
-                Explore ATK
+                Explore Dodds
               </h4>
               <ul className="space-y-2.5 text-xs">
                 <li>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({
                 </li>
                 <li>
                   <a href="#services" className="hover:text-white transition-colors">
-                    Services &amp; Detailing Packages
+                    Mobile Detailing Services
                   </a>
                 </li>
                 <li>
@@ -153,7 +153,7 @@ export const Footer: React.FC<FooterProps> = ({
                 </a>
               </div>
               <p className="text-[11px] text-neutral-400 leading-relaxed">
-                All ceramic coatings backed by manufacturer warranty. Inspected under high-intensity color-matched detailing light arrays.
+                Trained by Mexted Motors. Professional mobile interior and exterior vehicle care with meticulous attention to detail.
               </p>
             </div>
 
@@ -161,11 +161,13 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Bottom Copyright & Legal */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
-            <p>© 2025 ATK Detailing. All rights reserved.</p>
-            <div className="flex items-center gap-6 text-[11px]">
-              <span>New Zealand Registered Service</span>
+            <p>© 2025 Dodds Mobile Detailing. All rights reserved.</p>
+            <div className="flex items-center gap-4 text-[11px]">
+              <span>New Zealand Registered Mobile Detailing</span>
               <span>·</span>
-              <a href="#contact" className="hover:text-white transition-colors">Book Inspection</a>
+              <span>Trained by Mexted Motors</span>
+              <span>·</span>
+              <a href="#contact" className="hover:text-white transition-colors">Book Mobile Detail</a>
             </div>
           </div>
         </div>
@@ -176,7 +178,7 @@ export const Footer: React.FC<FooterProps> = ({
         href={BUSINESS_CONFIG.phoneHref}
         className="sm:hidden fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl active:scale-95 transition-transform border-2 border-white/20"
         style={{ backgroundColor: accentColor }}
-        aria-label={`Call ATK Detailing at ${BUSINESS_CONFIG.phoneDisplay}`}
+        aria-label={`Call Dodds Mobile Detailing at ${BUSINESS_CONFIG.phoneDisplay}`}
       >
         <Phone className="w-6 h-6 animate-pulse" />
       </a>

@@ -33,7 +33,7 @@ export const HeroCarVisual: React.FC<HeroCarVisualProps> = ({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full max-h-[380px] drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)]"
-          aria-label="ATK Detailing Sports Car Ceramic Coating Graphic"
+          aria-label="Dodds Mobile Detailing Sports Car Graphic"
           role="img"
         >
           <defs>
@@ -299,18 +299,18 @@ export const HeroCarVisual: React.FC<HeroCarVisualProps> = ({
         </svg>
       </div>
 
-      {/* Floating Nano-Bead / Hydrophobic Callout Indicator */}
+      {/* Floating Service Indicator */}
       <div className="absolute bottom-3 left-4 sm:bottom-5 sm:left-6 flex items-center gap-2.5 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-white/10 text-xs font-mono text-neutral-300">
         <span className="w-2 h-2 rounded-full" style={{ backgroundColor: accentColor }} />
-        <span className="font-semibold text-white tracking-wide">CERAMIC SHIELD</span>
+        <span className="font-semibold text-white tracking-wide">MOBILE DETAILING</span>
         <span className="text-neutral-500">|</span>
-        <span className="text-neutral-400">9H Hardness · &gt;110° Water Beading</span>
+        <span className="text-neutral-400">Interior &amp; Exterior · Trained by Mexted Motors</span>
       </div>
 
-      {/* Gloss Meter Callout */}
+      {/* Quality Callout */}
       <div className="hidden sm:flex absolute top-4 right-6 items-center gap-2 px-3 py-1.5 rounded-lg bg-black/75 backdrop-blur-md border border-white/10 text-xs text-neutral-300">
-        <span className="text-neutral-400">Surface Finish:</span>
-        <span className="text-white font-bold tracking-wider font-mono">100% DEEP MIRROR GLOSS</span>
+        <span className="text-neutral-400">Standard:</span>
+        <span className="text-white font-bold tracking-wider font-mono">PRECISION MOBILE DETAIL</span>
       </div>
     </div>
   );

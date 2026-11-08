@@ -2,10 +2,10 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  * 
- * ATK DETAILING – MODERN RESPONSIVE SINGLE-PAGE APPLICATION
+ * DODDS MOBILE DETAILING – MODERN RESPONSIVE SINGLE-PAGE APPLICATION
  * =========================================================================
- * Brand: ATK Detailing (New Zealand)
- * Tagline: Ceramic Coatings. Detailing Packages.
+ * Brand: Dodds Mobile Detailing (New Zealand)
+ * Tagline: Mobile Detailing. Interior | Exterior. Trained by Mexted Motors.
  * Alternating Sections: High-contrast Black (#0A0A0A) & Crisp White/Off-White (#F6F7F9)
  * Structure: Sticky Navbar + Exactly 5 Content Sections + Footer + Floating Mobile Actions
  * 1. Hero
@@ -51,7 +51,7 @@ import {
 
 export default function App() {
   // Service ID currently passed into the booking form
-  const [selectedServiceId, setSelectedServiceId] = useState<string>('ceramic-coating');
+  const [selectedServiceId, setSelectedServiceId] = useState<string>('interior-detailing');
 
   const accentColor = BUSINESS_CONFIG.accent.primary;
 
@@ -71,10 +71,10 @@ export default function App() {
       {/* =======================================================================
           SECTION 1: HERO (Dark Section)
           - Black background with SVG car silhouette illustration
-          - Headline: "Ceramic Coatings & Detailing, Done Right."
-          - Subheadline: "Premium detailing packages and long-lasting ceramic protection for your car."
-          - Buttons: "Call 021 139 0221" & "Get a Free Quote"
-          - Badges: "5.0 ★ (36 Google Reviews)", "Ceramic Coatings", "Detailing Packages"
+          - Headline: "Interior & Exterior Detailing, Done Right."
+          - Subheadline: "Professional mobile detailing for your car — brought directly to your door."
+          - Buttons: "Call 022 538 5350" & "Get a Free Quote"
+          - Badges: "5.0 ★ (8 Google Reviews)", "Interior | Exterior", "Mobile Detailing"
          ======================================================================= */}
       <section 
         id="hero" 
@@ -90,7 +90,7 @@ export default function App() {
             {/* Left Content Column (7 cols) */}
             <div className="lg:col-span-7 space-y-6 text-left">
               
-              {/* Badges strip: 5.0 ★ (36 Google Reviews) · Ceramic Coatings · Detailing Packages */}
+              {/* Badges strip: 5.0 ★ (8 Google Reviews) · Interior | Exterior · Mobile Detailing */}
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
                 <a
                   href="#reviews"
@@ -102,23 +102,23 @@ export default function App() {
 
                 <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#18181A] border border-white/10 text-neutral-300 font-mono text-[11px] uppercase tracking-wider">
                   <ShieldCheck className="w-3.5 h-3.5 text-red-500" />
-                  Ceramic Coatings
+                  Interior | Exterior
                 </span>
 
                 <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#18181A] border border-white/10 text-neutral-300 font-mono text-[11px] uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5 text-red-500" />
-                  Detailing Packages
+                  Mobile Detailing
                 </span>
               </div>
 
               {/* Marquee Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading uppercase tracking-tight text-white leading-[1.05] text-balance">
-                Ceramic Coatings &amp; Detailing, <span className="underline decoration-[#E10600] decoration-4 underline-offset-8">Done Right.</span>
+                Interior &amp; Exterior Detailing, <span className="underline decoration-[#E10600] decoration-4 underline-offset-8">Done Right.</span>
               </h1>
 
               {/* Subheadline */}
               <p className="text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed">
-                Premium detailing packages and long-lasting ceramic protection for your car. Precision swirl removal, deep interior rejuvenation, and permanent gloss engineered for New Zealand roads.
+                Professional mobile car detailing brought directly to your home or workplace. Thorough interior rejuvenation and precision exterior hand detailing across New Zealand, trained by Mexted Motors.
               </p>
 
               {/* Primary Action Buttons */}
@@ -144,10 +144,10 @@ export default function App() {
               {/* Trust Signal Lead-in */}
               <div className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-neutral-400">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> 100% Hand Crafted
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Trained by Mexted Motors
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> 9H Ceramic Nanotech
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Mobile Service at Your Door
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> By Appointment NZ
@@ -187,21 +187,21 @@ export default function App() {
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading uppercase tracking-tight text-[#0A0A0A]">
-              Services &amp; Detailing Packages
+              Mobile Detailing Services
             </h2>
 
-            {/* Mandated note above grid */}
+            {/* Subtitle */}
             <p className="text-sm text-neutral-600 mt-3 leading-relaxed">
-              Services and packages shown are examples, so edit them in the config to match what you offer.
+              Professional mobile interior and exterior car detailing delivered directly to your location. Trained by Mexted Motors.
             </p>
 
             <div className="mt-3 inline-block text-xs font-mono font-semibold text-red-700 bg-red-50 border border-red-200 px-3 py-1 rounded">
-              Request a quote: Pricing is customized based on vehicle size, paint depth &amp; condition.
+              Request a quote: Transparent quotes assessed on your vehicle's make and condition.
             </div>
           </div>
 
-          {/* 8-Card Responsive Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 2-Service Clean Responsive Grid (Interior & Exterior) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {SERVICES_CONFIG.map((service) => (
               <ServiceCard
                 key={service.id}
@@ -216,10 +216,10 @@ export default function App() {
           <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-[#0A0A0A] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
             <div>
               <h3 className="text-xl font-bold font-heading uppercase tracking-wide">
-                Need a Custom Fleet, Commercial or Supercar Package?
+                Need Both? Book a Complete Mobile Detail (Interior &amp; Exterior)
               </h3>
               <p className="text-xs text-neutral-400 mt-1">
-                We accommodate bespoke multi-vehicle collections, track cars, and corporate lease return details.
+                We travel directly to your home or workplace with everything needed for a full bumper-to-bumper detail.
               </p>
             </div>
             <a
@@ -227,7 +227,7 @@ export default function App() {
               className="px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-white shrink-0 hover:brightness-110 transition-all shadow-md"
               style={{ backgroundColor: accentColor }}
             >
-              Request Custom Quote
+              Request Mobile Quote
             </a>
           </div>
 
@@ -236,10 +236,10 @@ export default function App() {
 
       {/* =======================================================================
           SECTION 3: WHY CHOOSE US + OUR WORK (Dark Section)
-          - Short paragraph about meticulous detailing, ceramic coatings, lasting glossy finish
+          - Short paragraph about meticulous interior and exterior detailing, trained by Mexted Motors
           - 4 to 6 benefit points
           - Row of 3 before/after placeholder tiles (SVG/CSS)
-          - Stats row: "5.0 Google rating", "36 Google reviews", "Years in business: [edit]"
+          - Stats row: "5.0 Google rating", "8 Google reviews", "Years in business: [edit]"
          ======================================================================= */}
       <section 
         id="why-us" 
@@ -257,7 +257,7 @@ export default function App() {
                 Why Choose Us &amp; Our Work
               </h2>
               <p className="text-base text-neutral-300 mt-4 leading-relaxed">
-                At ATK Detailing, we combine meticulous preparation, professional-grade dual-action paint correction, and industry-leading ceramic coatings to achieve a deep, glass-like finish that endures. Every curve, wheel barrel, and interior crevice receives the focused time and precision care your vehicle deserves.
+                Trained by Mexted Motors, Dodds Mobile Detailing brings dealership-grade interior and exterior vehicle care directly to your location. From deep upholstery extraction to meticulous two-bucket hand washing, we deliver exceptional craftsmanship and convenience wherever you are in New Zealand.
               </p>
             </div>
 
@@ -273,7 +273,7 @@ export default function App() {
 
               <div className="p-2 border-x border-white/10">
                 <div className="text-2xl sm:text-3xl font-bold font-heading text-white">
-                  36
+                  8
                 </div>
                 <div className="text-[11px] text-neutral-400 font-mono mt-1">Google reviews</div>
               </div>
@@ -344,7 +344,7 @@ export default function App() {
       {/* =======================================================================
           SECTION 4: REVIEWS (Light Contrast Section)
           - Crisp off-white (#F6F7F9) with dark text
-          - Rating summary showing 5.0 stars "Based on 36 Google reviews"
+          - Rating summary showing 5.0 stars "Based on 8 Google reviews"
           - Grid of 3 clearly labelled placeholder review cards
           - "Read our reviews on Google" button with editable URL
          ======================================================================= */}
@@ -366,7 +366,7 @@ export default function App() {
             </h2>
 
             <p className="text-base text-neutral-600 mt-2 font-medium">
-              Based on 36 Google reviews from verified New Zealand car owners.
+              Based on 8 Google reviews from verified New Zealand car owners.
             </p>
 
             <div className="flex items-center justify-center gap-1 mt-3 text-amber-500">

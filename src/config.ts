@@ -2,7 +2,7 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  * 
- * ATK DETAILING - CENTRAL CONFIGURATION & CONTENT SPECIFICATION
+ * DODDS MOBILE DETAILING - CENTRAL CONFIGURATION & CONTENT SPECIFICATION
  * =========================================================================
  * How to customize:
  * 1. Business Info: Update phone, email, address, operating hours, and social handles below.
@@ -15,6 +15,7 @@
 export interface BusinessConfig {
   name: string;
   tagline: string;
+  logoPath: string;
   phoneDisplay: string;
   phoneTel: string;
   phoneHref: string;
@@ -34,7 +35,7 @@ export interface BusinessConfig {
   };
   yearsInBusinessText: string;
   accent: {
-    primary: string; // Electric Red (#E10600) or Racing Yellow (#FFC400)
+    primary: string; // Electric Red (#E10600) matching logo accent
     hover: string;
     textOnAccent: string;
   };
@@ -43,32 +44,33 @@ export interface BusinessConfig {
 }
 
 export const BUSINESS_CONFIG: BusinessConfig = {
-  name: "ATK Detailing",
-  tagline: "Ceramic Coatings. Detailing Packages.",
-  phoneDisplay: "021 139 0221",
-  phoneTel: "+64211390221",
-  phoneHref: "tel:+64211390221",
-  smsHref: "sms:+64211390221",
+  name: "Dodds Mobile Detailing",
+  tagline: "Mobile Detailing. Interior | Exterior.",
+  logoPath: "./assets/aistudio/image_f877f895.png",
+  phoneDisplay: "022 538 5350",
+  phoneTel: "+64225385350",
+  phoneHref: "tel:+64225385350",
+  smsHref: "sms:+64225385350",
   email: "info@yourdomain.com", // [EDITABLE PLACEHOLDER]
-  address: "[Street address], [City], NZ", // [EDITABLE PLACEHOLDER]
+  address: "[Street address], [City], NZ (Mobile Service)", // [EDITABLE PLACEHOLDER]
   hours: "Mon–Sat: 8:00 AM – 5:00 PM (By Appointment)", // [EDITABLE PLACEHOLDER]
   googleRating: {
     score: "5.0",
-    reviewCount: 36,
-    display: "5.0 ★ (36 Google Reviews)",
-    url: "https://www.google.com/maps/search/?api=1&query=ATK+Detailing+New+Zealand",
+    reviewCount: 8,
+    display: "5.0 ★ (8 Google Reviews)",
+    url: "https://www.google.com/maps/search/?api=1&query=Dodds+Mobile+Detailing+New+Zealand",
   },
   socials: {
-    instagram: "@yourinstagram", // [EDITABLE PLACEHOLDER]
-    facebook: "ATK Detailing NZ", // [EDITABLE PLACEHOLDER]
+    instagram: "@doddsmobiledetailing", // [EDITABLE PLACEHOLDER]
+    facebook: "Dodds Mobile Detailing NZ", // [EDITABLE PLACEHOLDER]
   },
   yearsInBusinessText: "Years in business: [edit]", // [EDITABLE PLACEHOLDER]
   accent: {
-    primary: "#E10600", // Electric Red (Motorsport accent)
+    primary: "#E10600", // Electric Red matching the logo's red accent & red car tail
     hover: "#C00400",
     textOnAccent: "#FFFFFF",
   },
-  googleMapsDirectionsUrl: "https://www.google.com/maps/search/?api=1&query=ATK+Detailing+New+Zealand",
+  googleMapsDirectionsUrl: "https://www.google.com/maps/search/?api=1&query=Dodds+Mobile+Detailing+New+Zealand",
   // If left empty or undefined, the sleek stylized New Zealand SVG map card is rendered
   googleMapsEmbedUrl: "",
 };
@@ -85,110 +87,32 @@ export interface ServiceItem {
 
 export const SERVICES_CONFIG: ServiceItem[] = [
   {
-    id: "ceramic-coating",
-    title: "Ceramic Coating",
-    shortDesc: "Multi-year hydrophobic nanotechnology shield delivering unmatched gloss, scratch resistance, and chemical protection.",
-    details: [
-      "9H diamond hardness layer",
-      "Extreme water & dirt beading",
-      "UV & oxidation defence",
-      "Multi-year durability warranty"
-    ],
-    isFeatured: true,
-    category: "protection",
-    badgeText: "Featured Protection",
-  },
-  {
-    id: "paint-correction",
-    title: "Paint Correction & Polish",
-    shortDesc: "Multi-stage machine compounding and finishing to eliminate swirl marks, scratches, etching, and paint haze.",
-    details: [
-      "Removal of up to 90%+ clear coat defects",
-      "Restores true depth and metallic clarity",
-      "Dual-action machine polishing finish",
-      "Prepares paint for ceramic application"
-    ],
-    isFeatured: true,
-    category: "paint",
-    badgeText: "Featured Service",
-  },
-  {
-    id: "full-interior-detail",
-    title: "Full Interior Detail",
-    shortDesc: "Complete deep cabin rejuvenation with steam sanitation, leather conditioning, and stain extraction.",
+    id: "interior-detailing",
+    title: "Interior Detailing",
+    shortDesc: "Complete mobile cabin clean including deep steam sanitation, upholstery extraction, leather conditioning, and streak-free glass.",
     details: [
       "Deep extraction on carpets & upholstery",
-      "Leather cleaning & UV conditioner",
-      "Dashboard, vents & crevices sanitized",
+      "Leather cleaning & UV conditioning",
+      "Dashboard, console & vents sanitized",
       "Crystal-clear streak-free glass inside"
     ],
-    isFeatured: false,
+    isFeatured: true,
     category: "interior",
+    badgeText: "Mobile Service",
   },
   {
-    id: "exterior-wash-hand-dry",
-    title: "Exterior Wash & Hand Dry",
-    shortDesc: "Safe multi-bucket contact wash, decontamination snow foam, wheel deep-clean, and plush microfiber dry.",
+    id: "exterior-detailing",
+    title: "Exterior Detailing",
+    shortDesc: "Thorough mobile exterior wash including safe two-bucket hand wash, wheel and tire decontamination, and plush microfiber dry.",
     details: [
       "pH-neutral citrus pre-wash & snow foam",
       "Two-bucket grit guard safe technique",
       "Wheel faces, barrels & tires degreased",
       "Plush warm-air & microfiber dry"
     ],
-    isFeatured: false,
+    isFeatured: true,
     category: "exterior",
-  },
-  {
-    id: "express-detail-package",
-    title: "Express Detail Package",
-    shortDesc: "Quick turnaround thorough spruce-up covering essential exterior wash and complete interior vacuum & wipe-down.",
-    details: [
-      "Exterior safe hand wash & spray sealant",
-      "Interior thorough vacuum & surface wipe",
-      "Windows cleaned inside and out",
-      "Tire dressing satin finish"
-    ],
-    isFeatured: false,
-    category: "exterior",
-  },
-  {
-    id: "premium-detail-package",
-    title: "Premium Detail Package",
-    shortDesc: "Comprehensive bumper-to-bumper transformation combining paint decontamination, gloss enhancement, and interior overhaul.",
-    details: [
-      "Chemical iron & clay bar decontamination",
-      "Single-stage gloss enhancement polish",
-      "Full deep interior shampoo & steam",
-      "6-month spray ceramic seal"
-    ],
-    isFeatured: false,
-    category: "protection",
-  },
-  {
-    id: "headlight-restoration",
-    title: "Headlight Restoration",
-    shortDesc: "Wet sanding, compounding, and UV ceramic sealant to eliminate yellow oxidation and restore nighttime beam clarity.",
-    details: [
-      "Removes yellow foggy oxidation",
-      "Multi-stage wet sanding & machine buff",
-      "Permanent UV protective clear seal",
-      "Improves road safety and WoF passability"
-    ],
-    isFeatured: false,
-    category: "restoration",
-  },
-  {
-    id: "odour-stain-removal",
-    title: "Odour & Stain Removal",
-    shortDesc: "Targeted ozone shock treatment and enzyme antimicrobial cleaning to eradicate pet smells, smoke, and spilled liquids.",
-    details: [
-      "High-output ozone generator treatment",
-      "Hot water stain extraction on seats/carpets",
-      "Enzyme-based odor neutralizing agent",
-      "Kills mildew, mould spores & bacteria"
-    ],
-    isFeatured: false,
-    category: "interior",
+    badgeText: "Mobile Service",
   },
 ];
 
@@ -217,34 +141,34 @@ export interface BeforeAfterTile {
 
 export const BEFORE_AFTER_TILES: BeforeAfterTile[] = [
   {
-    id: "paint-swirls",
-    title: "Paint Correction & Swirl Removal",
-    subtitle: "Heavy micro-marring, spider-webbing and clear coat oxidation restored to mirror reflection.",
-    beforeLabel: "Before: Swirled & Oxidized",
-    afterLabel: "After: 95% Flawless Mirror Gloss",
-    beforeImagePath: null, // Swap with: './images/paint-swirls-before.webp'
-    afterImagePath: null,  // Swap with: './images/paint-swirls-after.webp'
-    accentNote: "2-Stage Machine Correction",
+    id: "interior-cabin",
+    title: "Interior Cabin Deep Clean",
+    subtitle: "Dust, spilled drink residue, and soiled carpets thoroughly steam cleaned and extracted.",
+    beforeLabel: "Before: Soiled & Stained Cabin",
+    afterLabel: "After: Fresh, Sanitized & Detailed",
+    beforeImagePath: null, // Swap with: './images/interior-before.webp'
+    afterImagePath: null,  // Swap with: './images/interior-after.webp'
+    accentNote: "Mobile Interior Detail",
   },
   {
-    id: "ceramic-reflection",
-    title: "Ceramic Coating Hydrophobic Gloss",
-    subtitle: "Dull, unprotected clear coat upgraded to deep candy-gloss with ultra-tight water beading.",
-    beforeLabel: "Before: Flat Unprotected Clear",
-    afterLabel: "After: 9H Hydrophobic Shield",
-    beforeImagePath: null, // Swap with: './images/ceramic-before.webp'
-    afterImagePath: null,  // Swap with: './images/ceramic-after.webp'
-    accentNote: "Multi-Year Nanotech Coating",
+    id: "exterior-wash",
+    title: "Exterior Hand Wash & Wheel Detail",
+    subtitle: "Road film, brake dust, and exterior grime safely washed away with two-bucket hand wash technique.",
+    beforeLabel: "Before: Road Grime & Brake Dust",
+    afterLabel: "After: Clean, Glossy & Hand-Dried",
+    beforeImagePath: null, // Swap with: './images/exterior-before.webp'
+    afterImagePath: null,  // Swap with: './images/exterior-after.webp'
+    accentNote: "Mobile Exterior Detail",
   },
   {
     id: "interior-leather",
-    title: "Cabin Deep Extraction & Leather Restored",
-    subtitle: "Grime-baked leather, stained carpets and dull plastics restored to matte factory freshness.",
-    beforeLabel: "Before: Stained & Grime-Baked",
+    title: "Leather & Trim Rejuvenation",
+    subtitle: "Grime-baked steering wheel, leather seats, and plastic trim cleaned to factory matte finish.",
+    beforeLabel: "Before: Grimy & Worn Finish",
     afterLabel: "After: Matte Factory Finish",
-    beforeImagePath: null, // Swap with: './images/interior-before.webp'
-    afterImagePath: null,  // Swap with: './images/interior-after.webp'
-    accentNote: "Steam Clean & Leather Seal",
+    beforeImagePath: null, // Swap with: './images/leather-before.webp'
+    afterImagePath: null,  // Swap with: './images/leather-after.webp'
+    accentNote: "Mobile Interior Detail",
   },
 ];
 
@@ -255,8 +179,12 @@ export interface WhyChooseUsBenefit {
 
 export const WHY_CHOOSE_US_BENEFITS: WhyChooseUsBenefit[] = [
   {
-    title: "Ceramic Coating Specialists",
-    description: "Certified application of premier nano-ceramic formulas engineered specifically for harsh New Zealand UV rays and road conditions.",
+    title: "Trained by Mexted Motors",
+    description: "Professional automotive detailing standard trained by Mexted Motors, bringing dealership-grade care directly to your location.",
+  },
+  {
+    title: "Mobile Detailing Convenience",
+    description: "We travel directly to your home or workplace with full detailing equipment for completely hassle-free car care.",
   },
   {
     title: "Attention to Detail",
@@ -264,19 +192,15 @@ export const WHY_CHOOSE_US_BENEFITS: WhyChooseUsBenefit[] = [
   },
   {
     title: "Quality Products",
-    description: "We use only professional-grade pH-neutral shampoos, fine dual-action polishes, and industrial quartz ceramic coatings.",
+    description: "We use only professional-grade pH-neutral shampoos, safe microfiber towels, and gentle interior conditioners.",
   },
   {
     title: "Clear Package Options",
-    description: "Straightforward service tiers tailored to your car's condition, with no hidden upsells or confusing jargon.",
+    description: "Straightforward Interior, Exterior, and Combined mobile detailing packages with no hidden fees or confusing jargon.",
   },
   {
     title: "Honest Quotes",
-    description: "Transparent pricing assessed on your vehicle's make, paint condition, and personal expectations before work begins.",
-  },
-  {
-    title: "Satisfaction Focused",
-    description: "Every vehicle undergoes strict multi-angle inspection under specialised detailing lights prior to customer handover.",
+    description: "Transparent pricing assessed on your vehicle's make, condition, and requirements before work begins.",
   },
 ];
 
@@ -295,8 +219,8 @@ export const REVIEWS_CONFIG: ReviewItem[] = [
     id: "review-1",
     reviewer: "[Customer Name – Edit in config]",
     vehicle: "Audi RS3 Quattro",
-    service: "Full Paint Correction + Ceramic Coating",
-    reviewText: "Brought my RS3 in after years of automatic car wash scratches. The transformation was unreal—paint looks deeper than when it came off the showroom floor, and rainwater literally glides right off. Meticulous workmanship.",
+    service: "Full Mobile Detail (Interior + Exterior)",
+    reviewText: "Booked a mobile detail for my car right at home. The interior was spotless and the exterior looked showroom clean. Fantastic service, punctual, and very convenient.",
     dateText: "Recent Google Review",
     rating: 5,
   },
@@ -304,8 +228,8 @@ export const REVIEWS_CONFIG: ReviewItem[] = [
     id: "review-2",
     reviewer: "[Customer Name – Edit in config]",
     vehicle: "Ford Ranger Wildtrak",
-    service: "Premium Detail + Interior Shampoo",
-    reviewText: "Work ute was covered in site dust, dog hair, and muddy carpets. Collected it looking brand new inside and out with that fresh matte leather feel. Professional communication, punctual, and genuine pride in their craft.",
+    service: "Full Interior Mobile Detail",
+    reviewText: "Work ute was covered in site dust, dog hair, and muddy carpets. Arrived on time and had the cabin looking and smelling fresh again with that clean matte finish. Professional communication and genuine care.",
     dateText: "Recent Google Review",
     rating: 5,
   },
@@ -313,8 +237,8 @@ export const REVIEWS_CONFIG: ReviewItem[] = [
     id: "review-3",
     reviewer: "[Customer Name – Edit in config]",
     vehicle: "Porsche 911 Carrera",
-    service: "Ceramic Coating & Wheel Protection",
-    reviewText: "Superb attention to detail on delicate paintwork. The gloss levels under the sunlight are unbelievable. If you care about keeping your car in pristine condition in NZ, ATK Detailing is top tier.",
+    service: "Exterior Mobile Detail",
+    reviewText: "Superb mobile exterior wash and wheel clean right in my driveway. Great attention to detail and punctuality. Trained by Mexted Motors standard definitely shows. Highly recommended.",
     dateText: "Recent Google Review",
     rating: 5,
   },

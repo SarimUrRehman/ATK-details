@@ -2,11 +2,11 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  * 
- * ATK DETAILING STICKY NAVBAR
+ * DODDS MOBILE DETAILING STICKY NAVBAR
  * Strict 3-Zone Top Bar Contract:
- * Zone 1: ATK Detailing Brand mark
+ * Zone 1: Dodds Mobile Detailing Brand mark
  * Zone 2: 4-5 concise single-line nav links
- * Zone 3: 1 primary action ("Call 021 139 0221")
+ * Zone 3: 1 primary action ("Call 022 538 5350")
  * + Accessible Mobile Drawer Menu
  */
 
@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { label: 'Services', href: '#services' },
-    { label: 'Why ATK', href: '#why-us' },
+    { label: 'Why Us', href: '#why-us' },
     { label: 'Reviews', href: '#reviews' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -49,13 +49,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-8 h-12">
+        <div className="flex items-center justify-between gap-8 h-14 sm:h-16">
           
           {/* Zone 1: Brand Wordmark */}
           <a
             href="#hero"
             className="flex items-center gap-3 shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-lg p-1"
-            aria-label="ATK Detailing Home"
+            aria-label="Dodds Mobile Detailing Home"
           >
             <AtkLogo theme="dark" variant="compact" accentColor={accentColor} />
           </a>

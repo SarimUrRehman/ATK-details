@@ -29,7 +29,7 @@ interface FormState {
 }
 
 export const BookingForm: React.FC<BookingFormProps> = ({
-  selectedServiceId = 'ceramic-coating',
+  selectedServiceId = 'interior-detailing',
   accentColor = '#E10600',
 }) => {
   const [formData, setFormData] = useState<FormState>({
@@ -63,7 +63,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required for quotes';
     } else if (!/^[\d\s+()-]{7,18}$/.test(formData.phone.trim())) {
-      newErrors.phone = 'Please enter a valid phone number (e.g. 021 123 4567)';
+      newErrors.phone = 'Please enter a valid phone number (e.g. 022 538 5350)';
     }
 
     if (!formData.email.trim()) {
@@ -222,7 +222,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              placeholder="021 123 4567"
+              placeholder="022 538 5350"
               className={`w-full px-4 py-2.5 rounded-xl bg-black/60 border text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all ${
                 errors.phone ? 'border-red-500' : 'border-white/15 focus:border-white/40'
               }`}

@@ -55,7 +55,7 @@ export const NzMapCard: React.FC<NzMapCardProps> = ({
       <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-[#0D0E10] overflow-hidden flex items-center justify-center">
         {hasEmbed && showEmbed ? (
           <iframe
-            title="ATK Detailing Location Map"
+            title="Dodds Mobile Detailing Location Map"
             src={BUSINESS_CONFIG.googleMapsEmbedUrl}
             className="w-full h-full border-0"
             loading="lazy"
@@ -144,10 +144,10 @@ export const NzMapCard: React.FC<NzMapCardProps> = ({
               </text>
             </svg>
 
-            {/* Overlay pill badge: Workshop & Mobile Service */}
+            {/* Overlay pill badge: Mobile Service */}
             <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/85 backdrop-blur-md border border-white/10 text-[11px] text-neutral-300">
               <Globe className="w-3.5 h-3.5 text-neutral-400" />
-              <span>Premium Detailing &amp; Ceramic Studio</span>
+              <span>Mobile Detailing Across New Zealand</span>
             </div>
           </div>
         )}
@@ -156,7 +156,7 @@ export const NzMapCard: React.FC<NzMapCardProps> = ({
       {/* Card Footer: Address Placeholder & Directions Button */}
       <div className="p-4 sm:p-5 bg-[#0F0F11] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-xs text-neutral-400 font-mono">Location / Facility</div>
+          <div className="text-xs text-neutral-400 font-mono">Location / Service Area</div>
           <div className="text-sm font-semibold text-white mt-0.5">{BUSINESS_CONFIG.address}</div>
           <div className="text-xs text-neutral-400 mt-0.5">{BUSINESS_CONFIG.hours}</div>
         </div>

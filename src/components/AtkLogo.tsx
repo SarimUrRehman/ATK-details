@@ -2,240 +2,206 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  * 
- * ATK Detailing Official Brand Logo Recreated in Clean Inline Vector SVG
- * Features:
- * - Bold, tall condensed stacked "ATK" lettering
- * - Solid brand bar housing "D E T A I L I N G" in crisp uppercase
- * - Aerodynamic GT sports-car silhouette with sweeping roofline and ground-effects
- * - Full accessibility attributes (aria-label, role="img")
- * - Dark & light theme variants
+ * BRAND LOGO COMPONENT - DODDS MOBILE DETAILING
+ * - High-definition, crystal-clear vector rendering (100% razor sharp at any zoom/retina display)
+ * - Hardware-accelerated zoomed crop of the uploaded image file (crops away 75% dead black margins)
+ * - Zero blur, maximum clarity, instant recognition
  */
 
 import React from 'react';
+import { BUSINESS_CONFIG } from '../config';
 
-interface AtkLogoProps {
+interface BrandLogoProps {
   theme?: 'dark' | 'light';
   variant?: 'full' | 'compact' | 'monogram';
+  mode?: 'clear-vector' | 'zoomed-image';
   className?: string;
   accentColor?: string;
 }
 
-export const AtkLogo: React.FC<AtkLogoProps> = ({
+export const BrandLogo: React.FC<BrandLogoProps> = ({
   theme = 'dark',
-  variant = 'full',
-  className = 'h-14 w-auto',
+  variant = 'compact',
+  mode = 'clear-vector',
+  className = '',
   accentColor = '#E10600',
 }) => {
   const isDark = theme === 'dark';
-  
-  // Color tokens
-  const letterFill = isDark ? '#FFFFFF' : '#0A0A0A';
-  const barBg = isDark ? '#161616' : '#0A0A0A';
-  const barBorder = isDark ? 'rgba(255, 255, 255, 0.18)' : '#0A0A0A';
-  const barText = '#FFFFFF';
-  const carFill = isDark ? '#FFFFFF' : '#0A0A0A';
 
-  if (variant === 'monogram') {
-    return (
-      <svg
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={className}
-        role="img"
-        aria-label="ATK Detailing Monogram"
-      >
-        <rect width="100" height="100" rx="16" fill={isDark ? '#141414' : '#0A0A0A'} />
-        <rect x="2" y="2" width="96" height="96" rx="14" stroke={isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'} strokeWidth="2" />
-        <path d="M12 76H88V80H12z" fill={accentColor} />
-        <text
-          x="50"
-          y="62"
-          fill="#FFFFFF"
-          fontFamily="'Oswald', -apple-system, sans-serif"
-          fontWeight="700"
-          fontSize="44"
-          letterSpacing="-1"
-          textAnchor="middle"
-        >
-          ATK
-        </text>
-      </svg>
-    );
-  }
+  // Sizing by variant
+  const sizeClasses = {
+    monogram: 'h-10 w-10 sm:h-12 sm:w-12',
+    compact: 'h-12 sm:h-14 w-auto min-w-[160px] max-w-[240px]',
+    full: 'h-20 sm:h-24 w-auto min-w-[220px] max-w-[320px]',
+  }[variant];
 
-  if (variant === 'compact') {
-    // Horizontal header lockup for space efficiency while keeping identical brand mark
+  // If zoomed-image mode is requested, use SVG viewport cropping to zoom in on the exact PNG
+  // Original PNG has content only between X=18..130 and Y=52..95
+  if (mode === 'zoomed-image') {
     return (
-      <div className={`inline-flex items-center gap-3 select-none ${className}`}>
+      <div className={`inline-flex items-center select-none ${className}`}>
         <svg
-          viewBox="0 0 140 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-auto shrink-0"
+          viewBox="18 52 114 44"
+          preserveAspectRatio="xMidYMid meet"
+          className={`${sizeClasses} object-contain transition-transform duration-200 hover:scale-105`}
           role="img"
-          aria-label="ATK Detailing Brand Mark"
+          aria-label="Dodds Mobile Detailing Logo"
+          style={{ imageRendering: '-webkit-optimize-contrast' }}
         >
-          <text
-            x="4"
-            y="36"
-            fill={letterFill}
-            fontFamily="'Oswald', -apple-system, sans-serif"
-            fontWeight="700"
-            fontSize="42"
-            letterSpacing="-0.5"
-          >
-            ATK
-          </text>
-          {/* Detailing tag box */}
-          <rect x="2" y="42" width="94" height="15" rx="2" fill={barBg} stroke={barBorder} strokeWidth="1" />
-          <text
-            x="49"
-            y="53.5"
-            fill={barText}
-            fontFamily="'Rajdhani', -apple-system, sans-serif"
-            fontWeight="700"
-            fontSize="9.5"
-            letterSpacing="3"
-            textAnchor="middle"
-          >
-            DETAILING
-          </text>
-          {/* Subtle accent dash */}
-          <rect x="99" y="42" width="38" height="2" fill={accentColor} />
-          {/* Car silhouette contour */}
-          <path
-            d="M99 54c4-3 10-6 16-6 8 0 15 4 23 4h2l-2-2c-3-2-7-3-12-3-7 0-13 3-18 6l-9 1z"
-            fill={carFill}
-            opacity="0.85"
+          <image
+            href={BUSINESS_CONFIG.logoPath}
+            x="0"
+            y="0"
+            width="150"
+            height="150"
+            preserveAspectRatio="none"
           />
         </svg>
       </div>
     );
   }
 
-  // Full stacked badge as seen on the business identity:
-  // 1. Stacked bold ATK letters
-  // 2. Black bar with white "DETAILING"
-  // 3. Sports-car silhouette at the bottom
+  // Clear Vector Mode (Default): Infinitely sharp, crystal clear, zero pixelation or blur
   return (
-    <svg
-      viewBox="0 0 240 140"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      role="img"
-      aria-label="ATK Detailing Logo"
-    >
-      {/* Background container glow if dark */}
-      {isDark && (
-        <defs>
-          <linearGradient id="atkTextGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="100%" stopColor="#E2E2E2" />
-          </linearGradient>
-        </defs>
-      )}
+    <div className={`inline-flex items-center select-none ${className}`}>
+      <svg
+        viewBox="0 0 380 135"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`${sizeClasses} object-contain transition-transform duration-200 hover:scale-105 drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]`}
+        role="img"
+        aria-label="Dodds Mobile Detailing Clear Logo"
+      >
+        {/* ================= 1. SUPERCAR SILHOUETTE ================= */}
+        <g id="supercarSilhouette">
+          {/* Red Rear Taillight / Aero Diffuser Element */}
+          <path d="M 46 41 L 35 44 L 37 49 L 49 44 Z" fill={accentColor} />
+          <circle cx="36" cy="46" r="2.5" fill={accentColor} opacity="0.95" />
 
-      {/* 1. Stacked Bold Tall "ATK" */}
-      <g>
-        <text
-          x="120"
-          y="70"
-          fill={isDark ? "url(#atkTextGradDark)" : letterFill}
-          fontFamily="'Oswald', -apple-system, sans-serif"
-          fontWeight="700"
-          fontSize="84"
-          letterSpacing="-1.5"
-          textAnchor="middle"
-          style={{ textTransform: 'uppercase' }}
-        >
-          ATK
-        </text>
-      </g>
+          {/* Sleek Aerodynamic Roofline & Windshield (Continuous Pure White Arc) */}
+          <path
+            d="M 44 41 
+               C 70 36, 110 30, 160 26 
+               C 205 23, 240 29, 260 43 
+               C 255 43, 244 38, 212 34 
+               C 170 30, 128 35, 58 43 
+               Z"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+          />
 
-      {/* Accent corner pip */}
-      <rect x="22" y="8" width="6" height="6" fill={accentColor} />
-      <rect x="212" y="8" width="6" height="6" fill={accentColor} />
+          {/* Rear Quarter, Beltline & Mid-Engine Side Air Scoop */}
+          <path
+            d="M 106 44 
+               C 134 46, 180 47, 228 51 
+               L 232 54 
+               C 182 50, 136 49, 120 64 
+               L 115 62 
+               C 123 51, 128 47, 106 44 Z"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+            opacity="0.95"
+          />
 
-      {/* 2. Black Bar with white "DETAILING" */}
-      <g transform="translate(18, 80)">
-        <rect
-          x="0"
-          y="0"
-          width="204"
-          height="24"
-          rx="3"
-          fill={barBg}
-          stroke={barBorder}
-          strokeWidth="1.2"
-        />
-        {/* Subtle accent racing tick on left edge */}
-        <rect x="0" y="0" width="4" height="24" rx="1" fill={accentColor} />
-        
-        <text
-          x="104"
-          y="16.5"
-          fill={barText}
-          fontFamily="'Rajdhani', -apple-system, sans-serif"
-          fontWeight="700"
-          fontSize="14.5"
-          letterSpacing="4.5"
-          textAnchor="middle"
-        >
-          DETAILING
-        </text>
-      </g>
+          {/* Cockpit Window Sill */}
+          <path
+            d="M 148 32 
+               C 180 28, 208 33, 224 41 
+               L 162 39 
+               Z"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+            opacity="0.8"
+          />
 
-      {/* 3. Aerodynamic Sports-Car Silhouette at the bottom */}
-      <g transform="translate(20, 108)">
-        {/* Road line / shadow */}
-        <path
-          d="M 2 24 L 198 24"
-          stroke={isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)'}
-          strokeWidth="1"
-          strokeDasharray="4 2"
-        />
+          {/* Front Hood & Aggressive Nose Wedge */}
+          <path
+            d="M 255 42 
+               C 278 46, 308 53, 332 60 
+               L 330 62 
+               C 302 56, 274 49, 250 44 
+               Z"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+          />
 
-        {/* Sports-car silhouette path */}
-        <path
-          d="M 6 22 
-             C 12 21, 22 20, 32 19 
-             C 42 16, 52 14, 66 11 
-             C 76 9, 86 3, 102 3 
-             C 118 3, 134 5, 146 10 
-             C 156 14, 168 16, 178 18 
-             C 186 19, 194 21, 196 22
-             L 194 22
-             C 188 22, 184 17, 176 17
-             C 168 17, 164 22, 150 22
-             L 76 22
-             C 70 22, 66 17, 58 17
-             C 50 17, 46 22, 34 22
-             L 6 22 Z"
-          fill={carFill}
-          opacity="0.95"
-        />
+          {/* Front Nose Aero Accent Tick (Red) */}
+          <path d="M 332 60 L 336 61 L 330 63 L 327 61 Z" fill={accentColor} />
 
-        {/* Cockpit / window contour */}
-        <path
-          d="M 74 11 
-             C 84 6, 96 5, 106 5 
-             C 118 5, 130 7, 140 10 
-             L 132 11 
-             C 124 9, 114 7, 104 7 
-             C 94 7, 84 8, 76 11 Z"
-          fill={isDark ? '#141414' : '#FFFFFF'}
-          opacity="0.9"
-        />
+          {/* Rear Wheel Arch Contour */}
+          <path
+            d="M 54 58 
+               C 62 47, 88 46, 98 59 
+               C 91 51, 68 51, 54 58 Z"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+            opacity="0.9"
+          />
 
-        {/* Wheels outline styling */}
-        <circle cx="58" cy="20" r="4.5" fill={isDark ? '#2A2A2A' : '#E0E0E0'} stroke={carFill} strokeWidth="1.5" />
-        <circle cx="176" cy="20" r="4.5" fill={isDark ? '#2A2A2A' : '#E0E0E0'} stroke={carFill} strokeWidth="1.5" />
+          {/* Front Wheel Arch Contour */}
+          <path
+            d="M 246 59 
+               C 254 49, 282 50, 294 62 
+               C 285 54, 260 54, 246 59 Z"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+            opacity="0.9"
+          />
+        </g>
 
-        {/* Subtle accent headlight beam spark */}
-        <circle cx="195" cy="20.5" r="1.5" fill={accentColor} />
-      </g>
-    </svg>
+        {/* ================= 2. "D O D D S" TYPOGRAPHY ================= */}
+        {/* Bold Modern Wide-Spaced Lettering */}
+        <g transform="translate(190, 92)" textAnchor="middle">
+          <text
+            x="0"
+            y="0"
+            fill={isDark ? '#FFFFFF' : '#0A0A0A'}
+            fontFamily="'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+            fontWeight="700"
+            fontSize="32"
+            letterSpacing="8"
+            style={{ textTransform: 'uppercase' }}
+          >
+            DODDS
+          </text>
+        </g>
+
+        {/* ================= 3. "— MOBILE DETAILING —" ================= */}
+        <g transform="translate(190, 118)">
+          {/* Left Wing Flanking Rule */}
+          <line
+            x1="-150"
+            y1="-4"
+            x2="-72"
+            y2="-4"
+            stroke={accentColor}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+
+          {/* Subtitle Text */}
+          <text
+            x="0"
+            y="0"
+            fill={accentColor}
+            fontFamily="'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+            fontWeight="700"
+            fontSize="12.5"
+            letterSpacing="5"
+            textAnchor="middle"
+          >
+            MOBILE DETAILING
+          </text>
+
+          {/* Right Wing Flanking Rule */}
+          <line
+            x1="72"
+            y1="-4"
+            x2="150"
+            y2="-4"
+            stroke={accentColor}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </g>
+      </svg>
+    </div>
   );
 };
+
+// Backwards-compatible alias
+export const AtkLogo = BrandLogo;
